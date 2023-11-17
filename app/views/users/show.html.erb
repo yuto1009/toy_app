@@ -3,6 +3,12 @@
 <%= render @user %>
 
 <div>
+  <% if @first_micropost %>
+    <h3>First Micropost</h3>
+    <p><%= @first_micropost.content %></p>
+  <% else %>
+    <p>No micropost available</p>
+  <% end %>
   <%= link_to "Edit this user", edit_user_path(@user) %> |
   <%= link_to "Back to users", users_path %>
 
